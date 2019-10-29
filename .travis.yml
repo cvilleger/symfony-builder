@@ -17,7 +17,7 @@ script:
   - ls -la
 
 before_deploy:
-  - tar -zcf symfony-skeleton-PHP${TRAVIS_PHP_VERSION}.tar.gz ${REPO}
+  - tar -zcf symfony-skeleton-PHP${TRAVIS_PHP_VERSION}.tar.gz build
 
 deploy:
   provider: releases
