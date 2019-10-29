@@ -14,13 +14,16 @@ install: false
 
 script:
   - composer create-project symfony/skeleton build
-  - ls -la
+  - rm -rf build/var build/vendor
 
 before_deploy:
   - tar -zcf symfony-skeleton-PHP${TRAVIS_PHP_VERSION}.tar.gz build
 
 deploy:
   provider: releases
+  name: symfony-skeleton-PHP${TRAVIS_PHP_VERSION}
+  prerelease: true
+  body: "This is a pre-release of automatic Symfony skeleton build"
   api_key: ${YOUR_API_KEY}
   file: symfony-skeleton-PHP${TRAVIS_PHP_VERSION}.tar.gz
   overwrite: true
