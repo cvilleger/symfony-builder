@@ -1,15 +1,17 @@
-git:
-  quiet: true
-
 language: php
 
 php:
-  - '7.3'
+  - 7.1
+  - 7.2
+  - 7.3
+  - nightly
 
-env:
-  - APP_ENV=dev
+matrix:
+  allow_failures:
+    - php: nightly
 
-install: true
+install: false
 
 script:
   - composer create-project symfony/skeleton build
+  - ls -la
