@@ -1,14 +1,15 @@
-services:
-  - docker
+git:
+  quiet: true
+
+language: php
+
+php:
+  - '7.3'
+
+env:
+  - APP_ENV=dev
+
+install: true
 
 script:
-  - docker build .
-
-deploy:
-  provider: releases
-  api_key:
-    secure: YOUR_API_KEY_ENCRYPTED
-  file: "build.zip"
-  overwrite: true
-  skip_cleanup: true
-  draft: true
+  - composer create-project symfony/skeleton build
