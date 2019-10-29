@@ -6,3 +6,12 @@ before_install:
 
 script:
   - docker --version
+
+deploy:
+  provider: releases
+  api_key:
+    secure: YOUR_API_KEY_ENCRYPTED
+  file: "build.zip"
+  overwrite: true
+  skip_cleanup: true
+  draft: true
