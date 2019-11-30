@@ -1,0 +1,32 @@
+language: php
+
+php:
+  - 7.1
+  - 7.2
+  - 7.3
+  - 7.4
+  - nightly
+
+matrix:
+  allow_failures:
+    - php: nightly
+
+install: false
+
+script:
+  - composer create-project symfony/skeleton build
+  - rm -rf build/var build/vendor
+
+before_deploy:
+  - tar -zcf symfony-skeleton-PHP${TRAVIS_PHP_VERSION}.tar.gz build
+
+deploy:
+  provider: releases
+  name: symfony-skeleton-PHP${TRAVIS_PHP_VERSION}
+  prerelease: true
+  body: "This is a pre-release of automatic Symfony skeleton build"
+  api_key: ${YOUR_API_KEY}
+  file: symfony-skeleton-PHP${TRAVIS_PHP_VERSION}.tar.gz
+  overwrite: true
+  skip_cleanup: true
+  draft: true
