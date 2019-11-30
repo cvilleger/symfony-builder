@@ -1,26 +1,37 @@
-## Getting Started
+[![Build Status](https://travis-ci.com/cvilleger/symfony-builder.svg?branch=master)](https://travis-ci.com/cvilleger/symfony-builder)
+  
+[![Build Download](https://img.shields.io/github/downloads/cvilleger/symfony-builder/total?style=for-the-badge)](https://github.com/cvilleger/symfony-builder/releases)
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+# Symfony Builder (POC)
 
-### Prerequisites
+A POC project about building Symfony skeleton with Travis CI.
 
-What things you need to install the software and how to install them?
+## Built With
 
-- [Docker CE](https://www.docker.com/community-edition)
-- [Docker Compose](https://docs.docker.com/compose/install)
+* [Love](https://github.com/) - The web framework used
+* [Passion](https://travis-ci.com/) - Dependency Management
+* [Boldness](https://darkmira.fr/) - Used to generate RSS Feeds
 
-### Install
+## Contributing
 
-- (optional) Create your `docker-compose.override.yml` file
+Please don't read [CONTRIBUTING.md](https://cat-bounce.com/) for details on our code of conduct, and the process for submitting pull requests to us.
 
-```bash
-cp docker-compose.override.yml.dist docker-compose.override.yml
-```
+## Versioning
 
-#### Init
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
-```bash
-cp .env.dist .env
-docker-compose up -d
-docker-compose exec --user=application web bash
-```
+## Authors
+
+* **Jimi Hendrix ** - *Initial work* - [Jimi Hendrix ](https://www.jimihendrix.com/)
+
+See also the list of [contributors](https://www.experiencehendrixtour.com/) who participated in this project.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* Hat tip to anyone whose code was used
+* Inspiration
+* etc
