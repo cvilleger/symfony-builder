@@ -12,8 +12,6 @@ matrix:
     - php: 7.4
     - php: nightly
 
-install: false
-
 script:
   - composer create-project symfony/skeleton build
   - rm -rf build/var build/vendor
