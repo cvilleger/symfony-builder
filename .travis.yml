@@ -3,6 +3,7 @@ os: linux
 language: php
 
 php:
+  - 7.0
   - 7.1
   - 7.2
   - 7.3
@@ -11,6 +12,7 @@ php:
 
 jobs:
   allow_failures:
+    - php: 7.0
     - php: nightly
 
 script:
@@ -21,7 +23,6 @@ before_deploy:
   - tar -zcf symfony-skeleton-PHP${TRAVIS_PHP_VERSION}.tar.gz build
 
 deploy:
-  edge: true
   provider: releases
   name: symfony-skeleton-PHP${TRAVIS_PHP_VERSION}
   prerelease: true
@@ -29,5 +30,5 @@ deploy:
   token: ${YOUR_API_KEY}
   file: symfony-skeleton-PHP${TRAVIS_PHP_VERSION}.tar.gz
   overwrite: true
-  cleanup: true
+  skip_cleanup: true
   draft: true
