@@ -23,11 +23,12 @@ before_deploy:
 
 deploy:
   provider: releases
+  edge: true
   name: symfony-skeleton-PHP${TRAVIS_PHP_VERSION}
   prerelease: true
   body: "This is a pre-release of automatic Symfony skeleton build"
   api_key: ${YOUR_API_KEY}
   file: symfony-skeleton-PHP${TRAVIS_PHP_VERSION}.tar.gz
   overwrite: true
-  skip_cleanup: true
+  cleanup: true
   draft: true
