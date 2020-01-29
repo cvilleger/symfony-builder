@@ -9,7 +9,7 @@ php:
   - 7.4
   - nightly
 
-matrix:
+jobs:
   allow_failures:
     - php: nightly
 
@@ -21,6 +21,7 @@ before_deploy:
   - tar -zcf symfony-skeleton-PHP${TRAVIS_PHP_VERSION}.tar.gz build
 
 deploy:
+  edge: true
   provider: releases
   name: symfony-skeleton-PHP${TRAVIS_PHP_VERSION}
   prerelease: true
