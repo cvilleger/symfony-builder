@@ -1,3 +1,5 @@
+os: linux
+
 language: php
 
 php:
@@ -9,7 +11,6 @@ php:
 
 matrix:
   allow_failures:
-    - php: 7.4
     - php: nightly
 
 script:
@@ -21,11 +22,10 @@ before_deploy:
 
 deploy:
   provider: releases
-  edge: true
   name: symfony-skeleton-PHP${TRAVIS_PHP_VERSION}
   prerelease: true
-  body: "This is a pre-release of automatic Symfony skeleton build"
-  api_key: ${YOUR_API_KEY}
+  release_notes: "This is a pre-release of Symfony Skeleton with auto-build"
+  token: ${YOUR_API_KEY}
   file: symfony-skeleton-PHP${TRAVIS_PHP_VERSION}.tar.gz
   overwrite: true
   cleanup: true
