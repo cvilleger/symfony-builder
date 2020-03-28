@@ -23,7 +23,7 @@ before_deploy:
 
 deploy:
   provider: releases
-  name: symfony-skeleton-PHP${TRAVIS_PHP_VERSION}
+  name: "Symfony Skeleton"
   prerelease: true
   release_notes: "This is a pre-release of Symfony Skeleton with auto-build"
   token: ${YOUR_API_KEY}
