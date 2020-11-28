@@ -12,7 +12,7 @@ php:
 
 jobs:
   allow_failures:
-    - php: nightly
+    - php: 7.0
 
 script:
   - composer create-project symfony/skeleton build
