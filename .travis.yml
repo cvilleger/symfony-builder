@@ -30,3 +30,4 @@ deploy:
   file: symfony${SYMFONY_VERSION}-php${TRAVIS_PHP_VERSION}.tar.gz
   overwrite: true
   draft: true
+  skip_cleanup: true
