@@ -18,7 +18,11 @@ env:
 jobs:
   exclude:
   - php: 7.1
-    env: SYMFONY_VERSION=5.0 SYMFONY_VERSION=5.1 SYMFONY_VERSION=5.2
+    env: SYMFONY_VERSION=5.0
+  - php: 7.1
+    env: SYMFONY_VERSION=5.1
+  - php: 7.1
+    env: SYMFONY_VERSION=5.2
 script:
   - composer create-project symfony/skeleton:"^${SYMFONY_VERSION}" build
   - rm -rf build/var build/vendor
