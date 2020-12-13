@@ -3,7 +3,6 @@ os: linux
 language: php
 
 php:
-  - 7.0
   - 7.1
   - 7.2
   - 7.3
@@ -17,15 +16,15 @@ env:
   - SYMFONY_VERSION=5.2
 
 jobs:
-  allow_failures:
-    - php: 7.0
-
+  exclude:
+  - php: 7.1
+    env: SYMFONY_VERSION=5.0 SYMFONY_VERSION=5.1 SYMFONY_VERSION=5.2
 script:
   - composer create-project symfony/skeleton:"^${SYMFONY_VERSION}" build
   - rm -rf build/var build/vendor
 
 before_deploy:
-  - tar -zcf symfony-skeleton-PHP${TRAVIS_PHP_VERSION}.tar.gz build
+  - tar -zcf symfony${SYMFONY_VERSION}-php${TRAVIS_PHP_VERSION}.tar.gz build
 
 deploy:
   provider: releases
