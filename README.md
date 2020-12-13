@@ -1,5 +1,5 @@
 # Symfony Auto Build (working title)
-> Build fresh Symfony Skeleton Project over Jenkins
+> Build fresh Symfony Skeleton Project over Travis
 
 [![Build Download](https://img.shields.io/badge/Download-Now-red?logo=symfony)](https://github.com/cvilleger/symfony-builder/releases)
 [![Build Status](https://travis-ci.com/cvilleger/symfony-builder.svg?branch=master)](https://travis-ci.com/cvilleger/symfony-builder)
