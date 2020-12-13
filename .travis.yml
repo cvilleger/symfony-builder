@@ -23,12 +23,10 @@ before_deploy:
 
 deploy:
   provider: releases
-  edge: true
   name: "Symfony Skeleton"
   prerelease: true
   release_notes: "This is a pre-release of Symfony Skeleton with auto-build"
   token: ${YOUR_API_KEY}
   file: symfony${SYMFONY_VERSION}-php${TRAVIS_PHP_VERSION}.tar.gz
   overwrite: true
-  cleanup: true
   draft: true
