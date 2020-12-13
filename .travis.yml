@@ -16,7 +16,7 @@ jobs:
 
 script:
   - composer create-project symfony/skeleton build --no-scripts --no-install
-  - ls -la /build
+  - ls -la ./build
 
 before_deploy:
   - tar -zcf symfony-skeleton-PHP${TRAVIS_PHP_VERSION}.tar.gz build
