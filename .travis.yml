@@ -13,6 +13,7 @@ env:
   - SYMFONY_VERSION=5.0
   - SYMFONY_VERSION=5.1
   - SYMFONY_VERSION=5.2
+  - SYMFONY_VERSION=5.3
 
 script:
   - composer create-project symfony/skeleton:"^${SYMFONY_VERSION}" build
